@@ -1,0 +1,19 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f5fc 0%, #fff 100%);
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #7c5cbf;
+  font-size: 0.95rem;
+}
+
+.footer p {
+  margin: 0;
+}
