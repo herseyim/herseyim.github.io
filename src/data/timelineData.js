@@ -89,8 +89,8 @@ export const timelineEvents = [
  * 15–20+ foto ekleyebilirsin. public/photos/ içine koy, yol: "/photos/dosya.jpg"
  */
 export const heroPhotos = [
-  '/photos/foto5 (1).jpeg',
   '/photos/foto5 (2).jpeg',
+  '/photos/foto5 (1).jpeg',
   '/photos/foto5 (3).jpeg',
   '/photos/foto5 (4).jpeg',
   '/photos/foto5 (5).jpeg',
