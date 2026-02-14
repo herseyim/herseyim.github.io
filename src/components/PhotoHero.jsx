@@ -4,8 +4,8 @@ import './PhotoHero.css'
 
 const FALLBACK = heroPlaceholder('Fotoğraf')
 
-const COLLAGE_DURATION_MS = 10000
-const ALBUM_SLIDE_MS = 7000
+const COLLAGE_DURATION_MS = 15000
+const ALBUM_SLIDE_MS = 5000
 
 /** Kolajdaki her fotoğrafın konumu – 35 foto, boşluk bırakmadan sık dağıtılmış */
 function getCollagePosition(i, total) {

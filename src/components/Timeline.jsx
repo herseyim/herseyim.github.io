@@ -16,7 +16,10 @@ export default function Timeline() {
               <div className="timeline__date">{event.date}</div>
               <h3 className="timeline__title">{event.title}</h3>
               <p className="timeline__description">{event.description}</p>
-              <div className="timeline__image-wrap">
+              <div
+                className="timeline__image-wrap"
+                style={event.imageRotate != null ? { transform: `rotate(${event.imageRotate}deg)` } : undefined}
+              >
                 <img
                   src={event.image}
                   alt={event.title}

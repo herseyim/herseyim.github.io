@@ -15,6 +15,7 @@ export const timelineEvents = [
     title: 'Tanışma',
     description: 'İlk kez göz göze geldik. O an her şey değişti.',
     image: '/photos/bakısma.jpeg',
+    imageRotate: 30, // saat yönünün tersine hafif düzeltme (derece)
   },
   {
     id: 2,
