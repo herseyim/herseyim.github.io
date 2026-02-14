@@ -29,7 +29,8 @@ jobs:
       - run: npm run build
         env:
           NODE_ENV: production
-          GITHUB_PAGES: true
+          # username.github.io repo = kök; proje repo ise: BASE_PATH: '/repo-adi/'
+          BASE_PATH: '/'
 
       - uses: actions/upload-pages-artifact@3
         with:

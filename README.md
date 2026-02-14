@@ -25,11 +25,23 @@ npm run dev
 
 Tarayıcıda http://localhost:5173 açılır.
 
-## GitHub Pages’e yayınlama
+## GitHub Pages’e canlı alma
 
-1. Projeyi GitHub’a push et (repo adı örn. `github`).
-2. **Settings → Pages → Build and deployment:** Source = **GitHub Actions**.
-3. Projede `.github/workflows/deploy.yml` var; push’layınca build alınır ve `gh-pages` branch’ine atılır.
-4. Sayfa şu adreste açılır: `https://kullaniciadin.github.io/github/`
+1. **GitHub’da yeni repo oluştur** (örn. adı `bizim-hikaye` veya `github`). “Add a README” seçme.
+2. **Projeyi GitHub’a bağla ve push et:**
+   ```bash
+   cd c:\Users\baran\projeler\github
+   git init
+   git add .
+   git commit -m "İlk commit"
+   git branch -M main
+   git remote add origin https://github.com/KULLANICI_ADIN/repo-adi.git
+   git push -u origin main
+   ```
+   `KULLANICI_ADIN` ve `repo-adi` yerine kendi kullanıcı adın ve repo adını yaz.
+3. **Pages’i aç:** Repo sayfasında **Settings → Pages**. “Build and deployment” bölümünde **Source:** **GitHub Actions** seç.
+4. **İlk deploy:** Zaten `main`’e push ettiysen “Actions” sekmesinde workflow çalışır. Bittiğinde sayfa yayında olur.
+5. **Canlı adres:** `https://KULLANICI_ADIN.github.io/repo-adi/`  
+   Repo adın `github` ise: `https://KULLANICI_ADIN.github.io/github/`
 
-Repo adını değiştirirsen `vite.config.js` içindeki `base: '/github/'` değerini yeni repo adına göre güncelle (örn. `'/yeni-repo-adi/'`).
+**Önemli:** Repo adı `github` değilse `vite.config.js` içinde `'/github/'` yazan yeri `'/repo-adi/'` yap (repo adınla değiştir).
