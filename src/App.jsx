@@ -1,11 +1,13 @@
 import PhotoHero from './components/PhotoHero'
 import Timeline from './components/Timeline'
+import MusicPlayer from './components/MusicPlayer'
 import './App.css'
 
 function App() {
   return (
     <div className="app">
       <PhotoHero />
+      <MusicPlayer />
       <main>
         <Timeline />
       </main>
