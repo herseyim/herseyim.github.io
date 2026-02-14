@@ -1,7 +1,7 @@
-/* Fotoğraf (hero) alanının altında, noktaların üstünde */
+/* En üstte sabit */
 .music-player__btn {
   position: fixed;
-  bottom: 4rem;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -11,7 +11,7 @@
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.7);
-  background: rgba(45, 27, 78, 0.85);
+  background: rgba(45, 27, 78, 0.9);
   color: #fff;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -37,7 +37,7 @@
 
 @media (max-width: 768px) {
   .music-player__btn {
-    bottom: 3.5rem;
+    top: 0.75rem;
     padding: 0.45rem 0.9rem;
     font-size: 0.9rem;
   }
