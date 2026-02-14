@@ -36,13 +36,31 @@ export default function MusicPlayer({ src = DEFAULT_SRC }) {
     }
   }, [])
 
-  // Sayfa yüklenince müziği otomatik başlat (tarayıcı engellerse butonla başlatılır)
+  // Şarkıyı otomatik başlat: yüklendiğinde ve ilk tıklamada dene
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
     audio.volume = 1
-    const p = audio.play()
-    if (p) p.catch(() => {})
+
+    const tryPlay = () => {
+      const p = audio.play()
+      if (p) p.catch(() => {})
+    }
+
+    tryPlay()
+    audio.addEventListener('canplay', tryPlay, { once: true })
+
+    const onFirstInteraction = () => {
+      tryPlay()
+      document.removeEventListener('click', onFirstInteraction)
+      document.removeEventListener('touchstart', onFirstInteraction)
+    }
+    document.addEventListener('click', onFirstInteraction, { once: true })
+    document.addEventListener('touchstart', onFirstInteraction, { once: true })
+
+    return () => {
+      audio.removeEventListener('canplay', tryPlay)
+    }
   }, [])
 
   return (
