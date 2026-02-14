@@ -1,0 +1,2 @@
+# Kendi fotoğraflarını bu klasöre koy (örn. tanisma.jpg)
+# Sonra src/data/timelineData.js içinde image: '/photos/tanisma.jpg' yaz
