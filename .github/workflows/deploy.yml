@@ -1,3 +1,4 @@
+# main = kaynak kod, gh-pages = build edilmiş site (GitHub Pages bu branch'ten yayınlar)
 name: Deploy to GitHub Pages
 
 on:
@@ -5,16 +6,10 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,16 +27,8 @@ jobs:
           # username.github.io repo = kök; proje repo ise: BASE_PATH: '/repo-adi/'
           BASE_PATH: '/'
 
-      - uses: actions/upload-pages-artifact@3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - id: deploy
-        uses: actions/deploy-pages@4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
